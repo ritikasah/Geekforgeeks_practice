@@ -1,0 +1,8 @@
+void selectionSort(int arr[], int n){
+        for ( int start=0; start<n-1;start++){
+            auto minIt = min_element(arr+start,arr+n);
+            int minIndex = distance(arr+start,minIt)+start;
+            swap(arr[start],arr[minIndex]);
+            
+        }
+    }
