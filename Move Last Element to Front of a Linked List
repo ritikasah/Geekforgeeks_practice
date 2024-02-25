@@ -1,0 +1,19 @@
+ListNode *moveToFront(ListNode *head){
+        if(head==NULL || head->next == NULL) {
+            return head;
+        }
+        ListNode* prev = NULL;
+        ListNode* curr = head;
+        while(curr->next) {
+            prev = curr;
+            curr = curr->next;
+        }
+        int value = curr->val;
+        prev->next = curr->next;
+        delete curr;
+        ListNode* temp = new ListNode(value);
+            temp->next = head;
+            head = temp;
+        return head;
+        
+    }
