@@ -1,0 +1,19 @@
+Node* insertInMiddle(Node* head, int x)
+{
+	Node* temp = new Node(x);
+    
+    if(head == nullptr) return temp;
+    
+    Node* slow = head;
+    Node* fast = head;
+    
+    while(fast->next !=nullptr && fast->next->next!=nullptr){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    
+    temp->next = slow->next;
+    slow->next = temp;
+    
+    return head;
+}
