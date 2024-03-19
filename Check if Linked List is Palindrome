@@ -1,0 +1,25 @@
+bool isPalindrome(Node *head)
+    {
+        if(head==NULL || head->next==NULL){
+            return true;
+        }
+        Node* temp=head;
+        int num=0;
+        while(temp!=NULL){
+            num=num*10+temp->data;
+            temp=temp->next;
+        }
+        int tem=num;
+        int sum=0;
+        while(tem>0){
+            int digit=tem%10;
+            sum=sum*10+digit;
+            tem=tem/10;
+        }
+        if(sum==num){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
